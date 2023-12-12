@@ -19,14 +19,19 @@ const Login: React.FC = () => {
       <Box backgroundImage="/assets/auth/login-illustration.svg" w="50%" />
       <Center w="50%" h="full" p="40px">
         <Flex
+          w="full"
           p="40px"
           gap="15px"
           rounded="40px"
           flexDir="column"
           boxShadow="0px 4px 4px 0px #00000040"
-          w="full"
         >
-          <Image src="/logo-text.svg" w="310px" alt="randy-travel-logo" />
+          <Image
+            src="/logo-text.svg"
+            w="310px"
+            alt="randy-travel-logo"
+            alignSelf="center"
+          />
           <Text fontWeight="600" fontSize="24px">
             Masuk
           </Text>
