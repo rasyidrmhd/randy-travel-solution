@@ -5,11 +5,23 @@ import type { AppProps } from "next/app";
 import "@/randy-travel/styles/globals.css";
 import theme from "../theme";
 import Head from "next/head";
+import { NextPage } from "next";
+import Layout from "../app/layouts";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function App({ Component, pageProps }: AppProps) {
-  return (
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: React.ReactElement) => React.ReactNode;
+};
+
+export type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout ?? ((page) => page);
+
+  return getLayout(
     <>
       <Head>
         <title>Randy Travel Solution</title>
@@ -23,7 +35,13 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <ChakraProvider theme={theme}>
         <main className={`${inter.className}`}>
-          <Component {...pageProps} />
+          {Component.getLayout ? (
+            <Component {...pageProps} />
+          ) : (
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          )}
         </main>
       </ChakraProvider>
     </>
