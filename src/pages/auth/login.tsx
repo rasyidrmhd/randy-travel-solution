@@ -13,7 +13,9 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 
-const Login: React.FC = () => {
+import { NextPageWithLayout } from "../_app";
+
+const Login: NextPageWithLayout = () => {
   return (
     <Flex h="100vh">
       <Box backgroundImage="/assets/auth/login-illustration.svg" w="50%" />
@@ -27,10 +29,10 @@ const Login: React.FC = () => {
           boxShadow="0px 4px 4px 0px #00000040"
         >
           <Image
-            src="/logo-text.svg"
             w="310px"
-            alt="randy-travel-logo"
             alignSelf="center"
+            src="/logo-text.svg"
+            alt="randy-travel-logo"
           />
           <Text fontWeight="600" fontSize="24px">
             Masuk
@@ -58,6 +60,10 @@ const Login: React.FC = () => {
       </Center>
     </Flex>
   );
+};
+
+Login.getLayout = (page: React.ReactNode) => {
+  return <>{page}</>;
 };
 
 export default Login;

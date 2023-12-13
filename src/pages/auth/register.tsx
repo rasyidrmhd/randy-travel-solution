@@ -2,20 +2,19 @@ import React from "react";
 import {
   Button,
   Center,
-  Checkbox,
   Flex,
   FormControl,
   FormLabel,
   Input,
   Text,
-  Image,
   InputGroup,
   InputRightElement,
 } from "@chakra-ui/react";
-import Link from "next/link";
 import { ViewIcon } from "@chakra-ui/icons";
 
-const Register: React.FC = () => {
+import { NextPageWithLayout } from "../_app";
+
+const Register: NextPageWithLayout = () => {
   return (
     <Center
       w="100vw"
@@ -68,6 +67,10 @@ const Register: React.FC = () => {
       </Flex>
     </Center>
   );
+};
+
+Register.getLayout = (page: React.ReactNode) => {
+  return <>{page}</>;
 };
 
 export default Register;
