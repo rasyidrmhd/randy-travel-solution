@@ -26,11 +26,13 @@ const Header: React.FC = () => {
         >
           <Flex gap="13px">
             <Image src="/logo.svg" w="45px" h="40px" />
-            <Flex flexDir="column">
-              <Text fontSize="12px" fontWeight="900">
+            <Flex flexDir="column" justifyContent="center">
+              <Text fontSize="12px" fontWeight="900" lineHeight="12px">
                 Ravel
               </Text>
-              <Text fontSize="10px">Travel Solution by Randy</Text>
+              <Text fontSize="10px" lineHeight="10px">
+                Travel Solution by Randy
+              </Text>
             </Flex>
           </Flex>
         </GridItem>
