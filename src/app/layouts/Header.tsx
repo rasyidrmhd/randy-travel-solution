@@ -43,13 +43,13 @@ const Header: React.FC = () => {
           alignItems="center"
           justifyContent="center"
         >
-          <Link href="#" passHref>
+          <Link href="/" passHref>
             <Text>Home</Text>
           </Link>
-          <Link href="#" passHref>
+          <Link href="/place" passHref>
             <Text>Tempat Lain</Text>
           </Link>
-          <Link href="#" passHref>
+          <Link href="/testimonial" passHref>
             <Text>Testimoni</Text>
           </Link>
         </GridItem>
