@@ -12,6 +12,7 @@ import {
 
 import { NextPageWithLayout } from "../_app";
 import { Search2Icon } from "@chakra-ui/icons";
+import Link from "next/link";
 
 const ResultCard: React.FC<{
   src: string;
@@ -20,20 +21,22 @@ const ResultCard: React.FC<{
   price: string;
 }> = ({ src, title, desc, price }) => {
   return (
-    <Flex gap="40px" my="20px" cursor="pointer">
-      <Image src={src} w="242px" h="198px" alt={title} />
-      <Flex flexDir="column" gap="20px">
-        <Text fontSize="15px" fontWeight="700">
-          {title}
-        </Text>
-        <Text fontSize="14px" fontWeight="300">
-          {desc}
-        </Text>
-        <Text fontSize="15px" fontWeight="700">
-          Mulai dari: {price}
-        </Text>
+    <Link href="/place/detail/1" passHref>
+      <Flex gap="40px" my="20px">
+        <Image src={src} w="242px" h="198px" alt={title} />
+        <Flex flexDir="column" gap="20px">
+          <Text fontSize="15px" fontWeight="700">
+            {title}
+          </Text>
+          <Text fontSize="14px" fontWeight="300">
+            {desc}
+          </Text>
+          <Text fontSize="15px" fontWeight="700">
+            Mulai dari: {price}
+          </Text>
+        </Flex>
       </Flex>
-    </Flex>
+    </Link>
   );
 };
 
