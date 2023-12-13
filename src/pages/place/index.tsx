@@ -79,16 +79,10 @@ const Place: NextPageWithLayout = () => {
               price: "1500000",
             },
           ].map(({ title, src, desc, price }, idx) => (
-            <>
-              <ResultCard
-                key={idx}
-                src={src}
-                title={title}
-                desc={desc}
-                price={price}
-              />
+            <React.Fragment key={idx}>
+              <ResultCard src={src} title={title} desc={desc} price={price} />
               {idx === 0 && <Divider />}
-            </>
+            </React.Fragment>
           ))}
         </Flex>
         <Text fontSize="14px" fontWeight="700" alignSelf="center">
