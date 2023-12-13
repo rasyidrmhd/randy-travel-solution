@@ -2,7 +2,6 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { Inter } from "next/font/google";
 import type { AppProps } from "next/app";
 
-import "@/randy-travel/styles/globals.css";
 import theme from "../theme";
 import Head from "next/head";
 import { NextPage } from "next";
